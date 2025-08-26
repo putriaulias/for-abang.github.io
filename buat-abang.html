@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>lovyuuu!</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #fff0f5, #ffe4e1);
+      color: #333;
+      overflow-x: hidden;
+    }
+    .screen {
+      display: none;
+      min-height: 100vh;
+      width: 100%;
+      text-align: center;
+      padding: 20px;
+      box-sizing: border-box;
+    }
+    .active {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      animation: fadeIn 0.8s ease;
+    }
+    @keyframes fadeIn { from {opacity: 0;} to {opacity: 1;} }
+    @keyframes slideUp { from {opacity: 0; transform: translateY(30px);} to {opacity: 1; transform: translateY(0);} }
+
+    h1 { font-size: 2rem; color: #d6336c; margin-bottom: 15px; }
+    p { font-size: 1rem; margin-bottom: 25px; color: #555; }
+    .button {
+      display: inline-block;
+      padding: 12px 25px;
+      background: #d6336c;
+      color: #fff;
+      border-radius: 30px;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: 0.3s;
+      cursor: pointer;
+      margin: 5px;
+    }
+    .button:hover { background: #b02655; }
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      text-align: left;
+      width: 100%;
+      max-width: 700px;
+      animation: slideUp 0.8s ease;
+    }
+    .card h2 { font-size: 1.3rem; color: #c9184a; margin-bottom: 12px; }
+    .card ul { list-style: none; padding: 0; }
+    .card ul li { margin-bottom: 8px; font-size: 0.95rem; }
+    .funny-text {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: #888;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    /* Profile Box */
+    .profile {
+      background: #fff;
+      border-radius: 15px;
+      padding: 15px;
+      margin-top: 20px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      max-width: 600px;
+      text-align: center;
+    }
+    .profile img {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      margin-bottom: 10px;
+      border: 3px solid #d6336c;
+    }
+    .profile h3 { margin: 5px 0; color: #c9184a; }
+    .profile p { font-size: 0.9rem; color: #666; }
+
+    /* Countdown */
+    .countdown {
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin: 15px 0;
+      color: #d6336c;
+    }
+    .tagline {
+      border-top: 2px dashed #d6336c;
+      margin-top: 30px;
+      padding-top: 15px;
+      font-style: italic;
+      font-size: 1rem;
+      color: #555;
+    }
+
+    /* Responsif */
+    @media (max-width: 600px) {
+      h1 { font-size: 1.6rem; }
+      p { font-size: 0.95rem; }
+      .button { font-size: 0.9rem; padding: 10px 20px; }
+      .card { padding: 15px; }
+      .card h2 { font-size: 1.1rem; }
+      .card ul li { font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Opening Screen -->
+  <div id="opening" class="screen active">
+    <h1>✨ Hai, Sayang ✨</h1>
+    <p>hehe ini itenary kita main ke bandung🛵💨</p>
+    <button class="button" onclick="showLogin()">letss goow</button>
+  </div>
+
+  <!-- Login Screen -->
+  <div id="login" class="screen">
+    <h1>🔐 tunggu dlu, ini pacar aku bukan?</h1>
+    <button class="button" onclick="loginYes()">Jelaasss 💗</button>
+    <button class="button" onclick="loginNo()">Enggak 🙄</button>
+    <p id="login-response" style="color:#c9184a; margin-top:15px; font-weight:bold;"></p>
+  </div>
+
+  <!-- Main Content Screen -->
+  <div id="content" class="screen">
+    <h1>✨ 2 Days Suuuuper Quality time ✨</h1>
+    <p>yuhuuu ngedatee<3</p>
+
+    <div class="card">
+      <h2>📅 Sabtu</h2>
+      <div class="funny-text">"Sabtu ini jangan bosen ya sama aku, soalnya aku full booked buat kamu aja 😏"</div>
+      <ul>
+        <li>☕ 08.00 – Yok cari <b>Bubur Ayaaaam</b></li>
+        <li>☕ 09.00 – Ngopi dlu gasehh di <b>Toko Djawa Buah Batu</b></li>
+        <li>🍜 11.30 – harusnya ini makan tpi blom tau kmna hehe, usul dongg</li>
+        <li>🌿 14.30 – Asiik jalan & ngobrol di <b>Hutan Kota Baksil</b></li>
+        <li>🌌 18.00 – Laperrr yuk ke .. <b>Terserah blom tau kemana</b></li>
+        <li>🏡 21.00 – Pulang hehe ngantuk</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h2>📅 Minggu</h2>
+      <div class="funny-text">"Minggu ini kita healing tipis-tipis, biar Senin nggak baper kangen lagi 🤭"</div>
+      <ul>
+        <li>🥐 08.00 – Morning person ke <b>Bopet Bagindo</b> (jadi urang awak dlu kita)</li>
+        <li>🍲 10.30 – Mau ngga ke <b>Braga</b>?</li>
+        <li>🍲 12.30 – Hayuuk ini mah <b>makan apa aja</b> (asal sm abang)</li>
+        <li>🌳 15.00 – Katanya siih mau nonton <b>Demon Slayer</b></li>
+        <li>✨ 18.00 – Isi lambung di <b>Kembang Deli - Kopi Tiam</b></li>
+        <li>🚗 20.30 – Pulang💕</li>
+      </ul>
+    </div>
+
+    <button class="button" onclick="showEnding()">👋🏻hduh ga sabar bgttt?!</button>
+  </div>
+
+  <!-- Ending Page -->
+  <div id="ending" class="screen">
+    <h1>See youuu abaanngg😻</h1>
+    <p>Hitung mundur, kalo maju namanya masa depan ea</p>
+    <div class="countdown" id="countdown"></div>
+
+    <div class="profile">
+      <img src="https://i.ibb.co.com/xqv9WVQ8/ausa.jpg" alt="ausa">
+      <h3>Ausaa</h3>
+      <p>Kenalakeun deui pacar si abangg beton ini hehe<br>
+      hobinya ngeluh pengen matcha tpi ga buruan dibeli😋</p>
+    </div>
+
+    <div class="tagline">
+      "kenapa bandung?"
+    </div>
+  </div>
+
+  <script>
+    function showLogin() {
+      document.getElementById("opening").classList.remove("active");
+      document.getElementById("login").classList.add("active");
+    }
+    function loginYes() {
+      document.getElementById("login").classList.remove("active");
+      document.getElementById("content").classList.add("active");
+    }
+    function loginNo() {
+      document.getElementById("login-response").innerText = "heleeh, serius nih?! Coba klik yang bener dong 😤";
+    }
+    function showEnding() {
+      document.getElementById("content").classList.remove("active");
+      document.getElementById("ending").classList.add("active");
+      startCountdown();
+    }
+
+    // Countdown ke tanggal H
+    function startCountdown() {
+      const eventDate = new Date("September 5, 2025 09:00:00").getTime(); // ganti ke hari H kamu
+      const countdownEl = document.getElementById("countdown");
+      const timer = setInterval(() => {
+        const now = new Date().getTime();
+        const distance = eventDate - now;
+
+        if (distance < 0) {
+          clearInterval(timer);
+          countdownEl.innerHTML = "Hari ini waktunya ketemu! 💖";
+          return;
+        }
+
+        const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+        countdownEl.innerHTML = `${days} Hari ${hours} Jam ${minutes} Menit ${seconds} Detik`;
+      }, 1000);
+    }
+  </script>
+</body>
+</html>
